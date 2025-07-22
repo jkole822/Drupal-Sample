@@ -1,0 +1,11 @@
+{% set image_url = file_url(paragraph.field_hero_image.entity.uri.value) %}
+{% set image_alt = paragraph.field_hero_image.alt %}
+
+{% include "themes/custom/mytheme/components/hero.twig" with {
+  title: paragraph.field_hero_title.value,
+  subtitle: paragraph.field_hero_subtitle.value,
+  image_url: image_url,
+  image_alt: image_alt,
+  cta: paragraph.field_hero_cta.0,
+  secondary_cta: paragraph.field_hero_secondary_cta.0
+} %}

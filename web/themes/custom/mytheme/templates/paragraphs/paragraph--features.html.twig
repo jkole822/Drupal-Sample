@@ -1,0 +1,19 @@
+<section class="features page-margins">
+  {% if content.field_featured_items['#items'] is defined %}
+    <div class="gap-3 grid grid-cols-1 py-10 sm:grid-cols-3 md:gap-5">
+      {% for item in content.field_featured_items['#items'] %}
+        {% set paragraph = item.entity %}
+        {% set image_url = file_url(paragraph.field_image.entity.uri.value) %}
+        {% set image_alt = paragraph.field_image.alt %}
+
+        {% include "themes/custom/mytheme/components/feature.twig" with {
+          title: paragraph.field_title.value,
+          description: paragraph.field_description.value,
+          image_url: image_url,
+          image_alt: image_alt,
+          cta: paragraph.field_cta.0
+        } %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

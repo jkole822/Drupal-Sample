@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-2xs: 384px;
+  --breakpoint-xs: 512px;
+}
+
+@layer base {
+  a, button {
+    @apply cursor-pointer;
+  }
+
+  .page-margins {
+    @apply px-5 mx-auto max-w-7xl;
+  }
+}

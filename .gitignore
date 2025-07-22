@@ -1,0 +1,44 @@
+# Root-level
+/vendor/
+composer.lock
+phpunit.xml
+*.log
+*.sqlite
+
+# Node/npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Web root
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/
+/web/sites/*/files/
+!/web/sites/example.settings.local.php
+/web/sites/simpletest/
+/web/sites/*/settings*.php
+!/web/sites/default/default.settings.php
+
+# Front-end build
+/web/build/
+/web/dist/
+/web/assets/
+
+# .env and sensitive config
+.env
+.env.*
+
+# IDE / OS files
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/
+
+# Lando / DDEV / Docker / Vagrant
+.lando.yml
+.ddev/
+.docker/
+.vagrant/

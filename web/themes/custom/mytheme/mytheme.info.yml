@@ -1,0 +1,19 @@
+name: My Theme
+type: theme
+core_version_requirement: ^11
+base theme: stark
+description: A custom theme for my site.
+regions:
+  header: Header
+  main_menu: 'Main Menu'
+  pre_content: Pre-content
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: Page top
+  page_bottom: Page bottom
+  sidebar_first: First sidebar
+libraries:
+  - mytheme/global-styling
+  - mytheme/alpine

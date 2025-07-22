@@ -1,0 +1,13 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/script.js: {}
+
+alpine:
+  version: 3.x
+  js:
+    https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery

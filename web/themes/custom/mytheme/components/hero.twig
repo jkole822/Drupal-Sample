@@ -1,0 +1,35 @@
+<section class="hero h-screen relative xs:h-120">
+  {% if image_url %}
+    <img class="absolute h-[inherit] object-cover w-full" src="{{ image_url }}" alt="{{ image_alt }}">
+  {% endif %}
+  <div class="absolute bg-neutral-900 h-[inherit] opacity-40 size-full"></div>
+  {% if title or subtitle %}
+  <div class="h-[inherit] page-margins pt-20 relative">
+    <div class="sm:w-3/4">
+      {% if title %}
+        <h1 class="font-black text-6xl tracking-wide text-neutral-50">{{ title }}</h1>
+      {% endif %}
+      {% if subtitle %}
+        <p class="pt-7 text-xl text-neutral-50">{{ subtitle }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  <div class="absolute bottom-10 flex gap-4 right-5">
+  {% if cta and cta.url %}
+    {% include 'themes/custom/mytheme/components/cta.twig' with {
+      href: cta.url,
+      target: cta.target,
+      title: cta.title,
+    } %}
+  {% endif %}
+  {% if secondary_cta and secondary_cta.url %}
+    {% include 'themes/custom/mytheme/components/cta.twig' with {
+      href: secondary_cta.url,
+      target: secondary_cta.target,
+      title: secondary_cta.title,
+      class: 'bg-neutral-100! ring-neutral-300! text-neutral-800!',
+    } %}
+  {% endif %}
+  </div>
+</section>

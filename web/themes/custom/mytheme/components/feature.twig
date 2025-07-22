@@ -1,0 +1,25 @@
+<div class="bg-neutral-100 text-neutral-800 flex flex-col gap-3 overflow-hidden rounded-lg shadow-md">
+  {% if image_url %}
+    <img class="h-50 object-cover w-full" src="{{ image_url }}" alt="{{ image_alt }}">
+  {% endif %}
+  <div class="flex flex-col gap-6 h-full justify-between p-3">
+    {% if title or description %}
+      <div>
+        {% if title %}
+          <p class="font-extralight text-3xl tracking-widest uppercase">{{ title }}</p>
+        {% endif %}
+        {% if description %}
+          <div class="mt-2">{{ description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if cta and cta.url %}
+      {% include 'themes/custom/mytheme/components/cta.twig' with {
+        href: cta.url,
+        target: cta.target,
+        title: cta.title,
+        class: 'place-self-end [&_>_*]:w-fit sm:place-self-auto sm:[&_>_*]:w-full'
+      } %}
+    {% endif %}
+  </div>
+</div>
