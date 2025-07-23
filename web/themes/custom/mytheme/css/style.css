@@ -215,6 +215,9 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -363,9 +366,6 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
-  }
-  .py-2\.5 {
-    padding-block: calc(var(--spacing) * 2.5);
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
@@ -677,6 +677,26 @@
       & > * {
         width: 100%;
       }
+    }
+  }
+  .\[\&_\>_div\]\:flex {
+    & > div {
+      display: flex;
+    }
+  }
+  .\[\&_\>_div\]\:items-center {
+    & > div {
+      align-items: center;
+    }
+  }
+  .\[\&_\>_div\]\:justify-between {
+    & > div {
+      justify-content: space-between;
+    }
+  }
+  .\[\&_\>_div\]\:py-2\.5 {
+    & > div {
+      padding-block: calc(var(--spacing) * 2.5);
     }
   }
   .\[\&_img\]\:object-contain {

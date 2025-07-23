@@ -5,6 +5,7 @@ base theme: stark
 description: A custom theme for my site.
 regions:
   header: Header
+  navigation_header: 'Navigation Header Block'
   main_menu: 'Main Menu'
   pre_content: Pre-content
   breadcrumb: Breadcrumb
