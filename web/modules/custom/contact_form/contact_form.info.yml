@@ -1,0 +1,5 @@
+name: Contact Form
+type: module
+core_version_requirement: ^11
+description: Provides a custom contact form block.
+package: Custom

@@ -13,4 +13,36 @@
   .page-margins {
     @apply px-5 mx-auto max-w-7xl;
   }
+
+  #block-mytheme-contactformblock {
+    @apply max-w-2xl px-5 py-10;
+
+    h2 {
+      @apply font-bold mb-2 text-xl sm:text-3xl;
+    }
+  }
+
+  .contact-form {
+    @apply flex flex-col gap-3;
+
+    label {
+      @apply tracking-wider uppercase;
+    }
+
+    input, textarea {
+      @apply outline-hidden px-3 py-2 ring-2 ring-blue-500 rounded transition-all w-full focus-visible:ring-blue-300 focus-visible:ring-3 hover:ring-blue-300;
+    }
+
+    .js-form-item {
+      @apply flex flex-col font-light gap-1;
+    }
+
+    .js-form-submit {
+      @apply bg-blue-500 cursor-pointer font-bold inline-block outline-hidden px-3 py-2 ring-blue-500 rounded-lg text-center text-white transition-all w-fit focus-visible:ring-blue-300 focus-visible:ring-3 hover:opacity-80;
+    }
+
+    .form-success-message {
+      @apply bg-green-500 font-bold p-2 rounded text-white w-fit;
+    }
+  }
 }
