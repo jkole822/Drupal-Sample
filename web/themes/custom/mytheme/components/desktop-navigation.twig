@@ -1,0 +1,58 @@
+<div x-data="{ currentPath: '{{ path('<current>') }}' }" class="hidden md:block!">
+  <ul class="gap-5 flex">
+    {% for item in items %}
+      <li
+        class="relative"
+        x-data="{ dropdownOpen: false, isActive: '{{ item.url }}' === currentPath || ('{{ item.url }}' === '/' && currentPath === '/home') }"
+      >
+        {% if item.below %}
+          <button
+            @click="dropdownOpen = !dropdownOpen"
+            :class="{ 'text-blue-500! hover:text-blue-300!': isActive }"
+            class="cursor-pointer font-bold gap-1.5 outline-hidden inline-flex items-center text-lg text-neutral-50 transition-all focus-visible:after:scale-100 hover:text-blue-500 after:absolute after:bg-white after:bottom-0 after:h-0.5 after:left-0 after:scale-0 after:transition-all after:w-full"
+          >
+            {{ item.title }}
+            <span :class="{ 'rotate-180': dropdownOpen }" class="transition-all">
+              <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <ul
+            @click.away="dropdownOpen = false"
+            class="absolute bg-neutral-800 flex flex-col gap-2 px-3 py-2 rounded-lg w-fit"
+            x-show="dropdownOpen"
+            x-transition
+          >
+            <li
+              :class="{ 'text-blue-500! hover:text-blue-300!': isActive }"
+              class="font-bold outline-hidden ring-neutral-50 rounded text-neutral-50 tracking-wide [&_>_*]:outline-hidden has-focus-visible:ring-2 hover:text-blue-500"
+            >
+              <a href="{{ item.url }}">
+                {{ item.title }}
+              </a>
+            </li>
+            {% for sub_item in item.below %}
+              <li
+                :class="{ 'text-blue-500! hover:text-blue-300!': '{{ sub_item.url }}' === currentPath }"
+                class="font-bold outline-hidden ring-neutral-50 rounded text-neutral-50 tracking-wide [&_>_*]:outline-hidden has-focus-visible:ring-2 hover:text-blue-500"
+              >
+                <a href="{{ sub_item.url }}">
+                  {{ sub_item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <a
+            :class="{ 'text-blue-500! hover:text-blue-300!': isActive }"
+            class="font-bold outline-hidden text-lg text-neutral-100 transition-all w-fit focus-visible:after:scale-100 hover:text-blue-500 after:absolute after:bg-white after:bottom-0 after:h-0.5 after:left-0 after:scale-0 after:transition-all after:w-full"
+            href="{{ item.url }}"
+          >
+            {{ item.title }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

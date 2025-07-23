@@ -1,10 +1,9 @@
-<div class="bg-neutral-900 sticky top-0 w-full z-10">
-  <nav>
-    <div class="page-margins [&_>_div]:flex [&_>_div]:items-center [&_>_div]:justify-between [&_>_div]:py-2.5">
-      {% if page.navigation_header_block %}{{ page.navigation_header_block }}{% endif %}
-      {% if page.main_menu %}{{ page.main_menu }}{% endif %}
-    </div>
-  </nav>
-</div>
+<nav class="bg-neutral-900 sticky top-0 w-full z-10">
+  <div class="page-margins [&_>_div]:flex [&_>_div]:items-center [&_>_div]:justify-between [&_>_div]:py-2.5">
+    {% if page.navigation_header_block %}{{ page.navigation_header_block }}{% endif %}
+    {% if page.main_menu %}{{ page.main_menu }}{% endif %}
+  </div>
+</nav>
+
 
 {% if page.content %}{{ page.content }}{% endif %}
