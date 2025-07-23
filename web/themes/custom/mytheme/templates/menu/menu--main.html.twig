@@ -1,6 +1,6 @@
 {# Mobile Navigation #}
 <div x-data="{
-    currentPath: '{{ path('<current>') }}'
+    currentPath: '{{ path('<current>') }}',
     open: false,
     init() {
      this.$watch('open', value => {
@@ -90,8 +90,9 @@
     </ul>
   </div>
 </div>
+
 {# Desktop Navigation #}
-<div class="hidden md:block!">
+<div x-data="{ currentPath: '{{ path('<current>') }}' }" class="hidden md:block!">
   <ul class="gap-5 flex">
     {% for item in items %}
       <li
